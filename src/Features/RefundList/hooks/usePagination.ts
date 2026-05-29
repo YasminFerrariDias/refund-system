@@ -9,7 +9,7 @@ export const usePagination = (list: Refund[]) => {
     if (!list || !Array.isArray(list)) {
       return {
         currentItems: [],
-        totalPages: 0,
+        totalPages: 1,
         currentPage: 1,
         goToNextPage: () => { },
         goToPrevPage: () => { },
@@ -28,7 +28,7 @@ export const usePagination = (list: Refund[]) => {
   function goToPage(page: number) {
     if (page < 1) page = 1
     if (page > totalPages) page = totalPages
-    setCurrentPage(page)
+      setCurrentPage(page)
   }
 
   function goToNextPage() {
